@@ -11,12 +11,42 @@
   background-color: blue;
   height: 100px;
   padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-name a{
+  font-size: 16px;
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.create-room a{
+  text-decoration: none;
+  color: azure;
+  border: 1px solid lightblue;
+  padding: 14px;
+}
+
+.create-room{
+  font-size: 10px;
 }
 
 .rooms{
   background-color: navy;
   height: calc( 100vh - 100px);
   padding: 0 20px;
+  overflow: scroll;
+}
+
+.room{
+  padding: 20px 0 40px;
+}
+
+.room-name a{
+  color: antiquewhite;
+  text-decoration: none;
 }
 
 .chat{
@@ -32,7 +62,7 @@
 .messages{
   height: calc( 100vh - 190px);
   padding: 46px 40px 0;
-  background-color: #fafafa;
+  background-color: whitesmoke;
 }
 
 .form{
