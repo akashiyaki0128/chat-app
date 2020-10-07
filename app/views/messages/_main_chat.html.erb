@@ -13,22 +13,8 @@
 </div>
 
 <div class="messages">
-  <div class="upper-message">
-    <div class="message-user">
-    San
-    </div>
-    <div class="message-date">
-    2020/10/10 (fri) 12:21:55
-    </div>
-  </div>
-
-  <div class="lower-message">
-    <div class="message-content">
-    oh my god
-    </div>
-  </div>
+  <%= render partial: "message" , collection: @messages%>
 </div>
-
 
 
 <%= form_with model: [@room,@message],class:"form", local: true do |f| %>
