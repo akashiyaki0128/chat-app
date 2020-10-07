@@ -1,43 +1,29 @@
 <div class="chat-header">
   <div class="left-header">
     <div class="header-title">
-    <h1>chat application</h1>
+      <%= @room.name %>
     </div>
   </div>
 
   <div class="right-header">
     <div class="header-btn">
-      <a href="#">finish chatting</a>
+      <%= link_to "finish chatting", room_path(@room),method: :delete %>
     </div>
   </div>
 </div>
 
 <div class="messages">
-  <div class="upper-message">
-    <div class="message-user">
-    San
-    </div>
-    <div class="message-date">
-    2020/10/10 (fri) 12:21:55
-    </div>
-  </div>
-
-  <div class="lower-message">
-    <div class="message-content">
-    oh my god
-    </div>
-  </div>
+  <%= render partial: "message" , collection: @messages%>
 </div>
 
 
-
-<div class="form">
+<%= form_with model: [@room,@message],class:"form", local: true do |f| %>
   <div class="form-input">
-    <input class="form-message" placeholder="type a message">
+    <%= f.text_field :content, class:"form-message", placeholder:"type a message"%>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <input type="file" class="hidden">
+      <%= f.file_field :image, class:"hidden"%>
     </label>
   </div>
-    <input type="submit" class="form-submit" value="送信">
-</div>
+  <%= f.submit "送信",class:"form-submit"%>
+<% end %>
